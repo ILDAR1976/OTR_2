@@ -30,17 +30,21 @@ public class App
 	public static void main( String[] args )
     {
 		init();
-        
-		phoneList = new ArrayList<String>();
 		
 		if (args.length == 1) {
-			phoneList = notebook.get(args[0]);
-			if (phoneList.size() != 0) {
-				System.out.println("User " + args[0] + " contain next phone numbers:");
-				for (String item : phoneList) System.out.println(item);
+			phoneList = notebook.get(args[0]);	
+			
+			if (!(phoneList == null)) {
+				if (phoneList.size() != 0) {
+					System.out.println("User " + args[0] + " contain next phone numbers:");
+					for (String item : phoneList) System.out.println(item);
+				} else {
+					System.out.println( args[0] + " have not a phone numbers!" );
+				}
 			} else {
-				System.out.println( args[0] + " have not a phone numbers!" );
+				System.out.println("User with name " + args[0] + " not found");
 			}
+			
 		} else {
 			System.out.println("Not enter correct parameters!");
 		}
