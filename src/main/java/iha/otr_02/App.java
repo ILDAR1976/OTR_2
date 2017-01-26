@@ -31,13 +31,18 @@ public class App
     {
 		init();
 		
+		int counter = 0;
+		
 		if (args.length == 1) {
 			phoneList = notebook.get(args[0]);	
 			
 			if (!(phoneList == null)) {
 				if (phoneList.size() != 0) {
 					System.out.println("User " + args[0] + " contain next phone numbers:");
-					for (String item : phoneList) System.out.println(item);
+					for (String item : phoneList) {
+						counter++;
+						System.out.println("" + counter + ". " + item);
+					}
 				} else {
 					System.out.println( args[0] + " have not a phone numbers!" );
 				}
