@@ -55,6 +55,7 @@ public class AppTest {
 		Contacts.add("Иванов И.");
 	}
 	
+	
 	@Test
     public void testInit() {
         try {
